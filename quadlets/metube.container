@@ -1,0 +1,27 @@
+[Unit]
+Description=YouTube download server
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+Image=ghcr.io/alexta69/metube
+ContainerName=metube
+
+NoNewPrivileges=true
+
+PublishPort=127.0.0.1:8083:8081
+
+UserNS=keep-id
+
+Volume=/home/alex/shares/metube:/downloads:z
+
+AutoUpdate=registry
+
+[Service]
+Restart=always
+RestartSec=60s
+
+
+[Install]
+WantedBy=default.target
+

@@ -1,0 +1,21 @@
+[Unit]
+Description=Local DNS-server
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+ContainerName=adguardhome
+Image=docker.io/adguard/adguardhome:latest
+Network=host
+
+Volume=/home/alex/data/adguardhome/work:/opt/adguardhome/work:Z
+Volume=/home/alex/data/adguardhome/conf:/opt/adguardhome/conf:Z
+
+AutoUpdate=registry
+
+[Service]
+Restart=always
+RestartSec=60s
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,27 @@
+[Unit]
+Description=Relay server
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+Image=ghcr.io/mhsanaei/3x-ui:latest
+ContainerName=pannel
+
+NoNewPrivileges=true
+
+PublishPort=39663:39663/tcp
+PublishPort=39663:39663/udp
+PublishPort=127.0.0.1:8081:2053
+
+Volume=/home/alex/data/pannel:/etc/x-ui:Z
+
+AutoUpdate=registry
+
+[Service]
+Restart=always
+RestartSec=60s
+
+
+[Install]
+WantedBy=default.target
+

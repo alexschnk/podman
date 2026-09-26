@@ -1,0 +1,36 @@
+[Unit]
+Description=Authelia authentication server
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+Image=docker.io/authelia/authelia
+ContainerName=authelia
+
+NoNewPrivileges=true
+
+PublishPort=127.0.0.1:9091:9091
+
+Volume=/home/alex/data/authelia/secrets:/secrets:ro,Z
+Volume=/home/alex/configs/apps/authelia/config:/config:Z
+Volume=/home/alex/data/authelia/db:/db:Z
+Volume=/home/alex/data/authelia/logs:/var/log/authelia/:Z
+
+
+Environment=TZ=Europe/Moscow
+# tr -cd '[:alnum:]' < /dev/urandom | fold -w 64 | head -n 1 > ./secrets/JWT_SECRET
+Environment=AUTHELIA_IDENTITY_VALIDATION_RESET_PASSWORD_JWT_SECRET_FILE=/secrets/JWT_SECRET
+# tr -cd '[:alnum:]' < /dev/urandom | fold -w 64 | head -n 1 > ./secrets/SESSION_SECRET
+Environment=AUTHELIA_SESSION_SECRET_FILE=/secrets/SESSION_SECRET
+# tr -cd '[:alnum:]' < /dev/urandom | fold -w 64 | head -n 1 > ./secrets/STORAGE_ENCRYPTION_KEY
+Environment=AUTHELIA_STORAGE_ENCRYPTION_KEY_FILE=/secrets/STORAGE_ENCRYPTION_KEY
+
+AutoUpdate=registry
+
+[Service]
+Restart=always
+RestartSec=60s
+
+
+[Install]
+WantedBy=default.target

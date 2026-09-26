@@ -1,0 +1,26 @@
+[Unit]
+Description=Push-notification server
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+ContainerName=gotify
+Image=docker.io/gotify/server:2
+
+NoNewPrivileges=true
+
+PublishPort=127.0.0.1:8087:80
+
+Volume=/home/alex/data/gotify:/app/data:Z
+
+Environment=TZ=Europe/Moscow
+
+AutoUpdate=registry
+
+[Service]
+Restart=always
+RestartSec=60s
+
+[Install]
+WantedBy=default.target
+

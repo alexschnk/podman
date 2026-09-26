@@ -1,0 +1,27 @@
+http:
+  routers:
+    authelia:
+      rule: "Host(`auth.homelab.ru`)"
+      entryPoints:
+        - https
+      service: authelia
+      tls: true
+      middlewares:
+        - security-headers@file
+
+  services:
+    authelia:
+      loadBalancer:
+        servers:
+          - url: "http://127.0.0.1:9091"
+
+  middlewares:
+    authelia:
+      forwardAuth:
+        address: "http://127.0.0.1:9091/api/verify?rd=https://auth.homelab.ru"
+        trustForwardHeader: true
+        authResponseHeaders:
+          - Remote-User
+          - Remote-Groups
+          - Remote-Name
+          - Remote-Email

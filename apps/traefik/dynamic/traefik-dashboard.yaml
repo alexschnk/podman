@@ -1,0 +1,11 @@
+http:
+  routers:
+    traefik-dashboard:
+      rule: "Host(`traefik-dashboard.homelab.ru`)"
+      entryPoints:
+        - https
+      service: api@internal
+      tls: true
+      middlewares:
+        - security-headers@file
+        - authelia@file

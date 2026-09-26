@@ -1,0 +1,24 @@
+[Unit]
+Description=Uptime monitoring
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+ContainerName=uptime-kuma
+Image=docker.io/louislam/uptime-kuma:latest
+
+NoNewPrivileges=true
+
+PublishPort=127.0.0.1:8085:3001
+
+Volume=/home/alex/data/uptime-kuma:/app/data:Z
+
+AutoUpdate=registry
+
+[Service]
+Restart=always
+RestartSec=60s
+
+[Install]
+WantedBy=default.target
+

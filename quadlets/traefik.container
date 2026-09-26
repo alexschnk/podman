@@ -1,0 +1,27 @@
+[Unit]
+Description=Reverse proxy
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+Image=docker.io/library/traefik:latest
+ContainerName=traefik
+Network=host
+
+NoNewPrivileges=true
+
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=/home/alex/configs/apps/traefik/configs/traefik.yaml:/traefik.yaml:ro,Z
+Volume=/home/alex/configs/apps/traefik/configs/acme.json:/acme.json:Z
+Volume=/home/alex/configs/apps/traefik/dynamic:/dynamic/:ro,Z
+Volume=/home/alex/data/traefik/logs:/var/log/traefik:Z
+Volume=/home/alex/data/traefik/ssl:/ssl:ro,Z
+
+AutoUpdate=registry
+
+[Service]
+Restart=always
+RestartSec=60s
+
+[Install]
+WantedBy=default.target
