@@ -51,6 +51,11 @@
 
 - Сервисы:
 
+    - Cockpit:
+        icon: cockpit.png
+        href: https://cockpit.homelab.ru
+        description: Панель управления Podman VM
+   
     - Forgejo:
         icon: forgejo.png
         href: https://forgejo.homelab.ru

@@ -15,7 +15,7 @@ layout:
 
   Сервисы:
     style: row
-    columns: 4
+    columns: 5
 
   Закладки:
     style: row
