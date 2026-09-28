@@ -59,13 +59,9 @@ access_control:
           policy: two_factor
         - domain: traefik-dashboard.homelab.ru
           policy: two_factor
-        - domain: dockhand.homelab.ru
-          policy: two_factor
         - domain: metube.homelab.ru
           policy: two_factor
         - domain: stirling-pdf.homelab.ru
-          policy: two_factor
-        - domain: backrest.homelab.ru
           policy: two_factor
 session:
     name: authelia_session
