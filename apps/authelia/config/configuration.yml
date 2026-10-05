@@ -63,6 +63,8 @@ access_control:
           policy: two_factor
         - domain: stirling-pdf.homelab.ru
           policy: two_factor
+        - domain: victoria-metrics.homelab.ru
+          policy: two_factor
 session:
     name: authelia_session
     # This secret can also be set using the env variables AUTHELIA_SESSION_SECRET_FILE
