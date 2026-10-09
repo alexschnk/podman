@@ -10,7 +10,6 @@ ContainerName=pannel
 NoNewPrivileges=true
 
 PublishPort=39664:39664/tcp
-PublishPort=39664:39664/udp
 PublishPort=127.0.0.1:8081:2053
 
 Volume=/home/alex/data/pannel:/etc/x-ui:Z
