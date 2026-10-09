@@ -14,6 +14,7 @@ PublishPort=21000:22000
 
 Volume=/home/alex/shares/syncthing/bases:/var/syncthing/bases:z
 Volume=/home/alex/shares/syncthing/data:/var/syncthing/data:z
+Volume=/home/alex/shares/syncthing/karina:/var/syncthing/karina:z
 Volume=/home/alex/data/syncthing:/var/syncthing/config:Z
 
 Environment=PUID=0
