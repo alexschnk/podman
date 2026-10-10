@@ -14,7 +14,7 @@ Pod=monitoring.pod
 Volume=/home/alex/data/monitoring/victoria-metrics:/victoria-metrics-data:Z
 Volume=/home/alex/configs/apps/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:Z,ro
 
-Exec=--storageDataPath=/victoria-metrics-data --retentionPeriod=14d --httpListenAddr=:8428 --promscrape.config=/etc/prometheus/prometheus.yml
+Exec=--storageDataPath=/victoria-metrics-data --retentionPeriod=90d --httpListenAddr=:8428 --promscrape.config=/etc/prometheus/prometheus.yml
 
 AutoUpdate=registry
 
