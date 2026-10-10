@@ -8,6 +8,8 @@ ContainerName=homepage
 Image=ghcr.io/gethomepage/homepage:latest
 
 NoNewPrivileges=true
+ReadOnly=true
+DropCapability=all
 
 PublishPort=127.0.0.1:8088:3000
 
