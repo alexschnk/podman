@@ -10,10 +10,9 @@ ContainerName=metube
 NoNewPrivileges=true
 ReadOnly=true
 DropCapability=all
+UserNS=keep-id
 
 PublishPort=127.0.0.1:8083:8081
-
-UserNS=keep-id
 
 Volume=/home/alex/shares/metube:/downloads:z
 
