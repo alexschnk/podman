@@ -8,10 +8,16 @@ ContainerName=uptime-kuma
 Image=docker.io/louislam/uptime-kuma:latest
 
 NoNewPrivileges=true
+ReadOnly=true
+DropCapability=all
+AddCapability=CAP_SETUID
+AddCapability=CAP_SETGID
 
 PublishPort=127.0.0.1:8085:3001
 
 Volume=/home/alex/data/uptime-kuma:/app/data:Z
+
+Environment=NODE_TLS_REJECT_UNAUTHORIZED=0
 
 AutoUpdate=registry
 
