@@ -8,6 +8,7 @@ Image=ghcr.io/mhsanaei/3x-ui:latest
 ContainerName=pannel
 
 NoNewPrivileges=true
+DropCapability=all
 
 PublishPort=39664:39664/tcp
 PublishPort=127.0.0.1:8081:2053
