@@ -8,6 +8,11 @@ ContainerName=stirling-pdf
 Image=docker.io/stirlingtools/stirling-pdf:latest
 
 NoNewPrivileges=true
+DropCapability=all
+AddCapability=CAP_CHOWN
+AddCapability=CAP_SETUID
+AddCapability=CAP_SETGID
+AddCapability=CAP_DAC_OVERRIDE
 
 PublishPort=127.0.0.1:8084:8080
 
