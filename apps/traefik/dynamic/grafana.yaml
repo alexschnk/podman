@@ -13,5 +13,5 @@ http:
     grafana:
       loadBalancer:
         servers:
-          - url: "http://192.168.31.204:8086"            # Change IP Address to your proxmox instance
+          - url: "http://127.0.0.1:8091"            # Change IP Address to your proxmox instance
         passHostHeader: true

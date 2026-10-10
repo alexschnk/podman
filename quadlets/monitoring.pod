@@ -1,0 +1,11 @@
+[Unit]
+Description=Grafana and Victoria-metrics monitoring pod
+
+[Pod]
+PodName=monitoring
+PublishPort=127.0.0.1:8091:3000
+PublishPort=127.0.0.1:8090:8428
+
+[Install]
+WantedBy=default.target
+

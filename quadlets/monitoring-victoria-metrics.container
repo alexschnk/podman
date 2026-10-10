@@ -1,0 +1,27 @@
+[Unit]
+Description=DB for metrics
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+ContainerName=monitoring-victoria-metrics
+Image=docker.io/victoriametrics/victoria-metrics:latest
+
+NoNewPrivileges=true
+
+Pod=monitoring.pod
+
+Volume=/home/alex/data/monitoring/victoria-metrics:/victoria-metrics-data:Z
+Volume=/home/alex/configs/apps/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:Z,ro
+
+Exec=--storageDataPath=/victoria-metrics-data --retentionPeriod=14d --httpListenAddr=:8428 --promscrape.config=/etc/prometheus/prometheus.yml
+
+AutoUpdate=registry
+
+[Service]
+Restart=always
+RestartSec=60s
+
+[Install]
+WantedBy=default.target
+
