@@ -8,6 +8,10 @@ Image=docker.io/authelia/authelia
 ContainerName=authelia
 
 NoNewPrivileges=true
+DropCapability=all
+AddCapability=CAP_SETUID
+AddCapability=CAP_SETGID
+AddCapability=CAP_DAC_OVERRIDE
 
 PublishPort=127.0.0.1:9091:9091
 

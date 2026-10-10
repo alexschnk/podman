@@ -9,6 +9,9 @@ ContainerName=traefik
 Network=host
 
 NoNewPrivileges=true
+ReadOnly=true
+DropCapability=all
+AddCapability=CAP_NET_BIND_SERVICE
 
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=/home/alex/configs/apps/traefik/configs/traefik.yaml:/traefik.yaml:ro,Z
