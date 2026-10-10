@@ -8,6 +8,12 @@ ContainerName=syncthing
 Image=docker.io/syncthing/syncthing
 
 NoNewPrivileges=true
+ReadOnly=true
+DropCapability=all
+AddCapability=CAP_CHOWN
+AddCapability=CAP_SETUID
+AddCapability=CAP_SETGID
+AddCapability=CAP_DAC_OVERRIDE
 
 PublishPort=127.0.0.1:8089:8384
 PublishPort=21000:22000
