@@ -8,6 +8,8 @@ ContainerName=monitoring-grafana
 Image=docker.io/grafana/grafana:latest
 
 NoNewPrivileges=true
+ReadOnly=true
+DropCapability=all
 User=0
 Group=0
 
