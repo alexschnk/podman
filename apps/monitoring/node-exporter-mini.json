@@ -1926,8 +1926,8 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "expr": "node_hwmon_temp_celsius{instance=\"$node\", job=\"$job\", chip=~\"$diskchip\", sensor=\"temp1\"} * on(chip) group_left(chip_name) node_hwmon_chip_names{instance=\"$node\", job=\"$job\"}",
-                        "legendFormat": "{{chip_name}}"
+                        "expr": "label_replace(label_replace(node_hwmon_temp_celsius{instance=\"$node\", job=\"$job\", chip=~\"$diskchip\", sensor=\"temp1\"}, \"disk\", \"$1\", \"chip\", \"(.+)\"), \"disk\", \"nvme${1}n1\", \"chip\", \".*nvme_?(\\\\d+)$\") * on(chip) group_left(chip_name) node_hwmon_chip_names{instance=\"$node\", job=\"$job\"}",
+                        "legendFormat": "{{disk}}"
                       },
                       "version": "v0"
                     },
@@ -2290,6 +2290,25 @@
                     },
                     "refId": "E"
                   }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "${ds_prometheus}"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "node_zfs_arc_size{instance=\"$node\", job=\"$job\"}",
+                        "legendFormat": "ZFS ARC"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "F"
+                  }
                 }
               ],
               "queryOptions": {},
@@ -2492,6 +2511,29 @@
                           ],
                           "fill": "dash"
                         }
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "ZFS ARC"
+                    },
+                    "properties": [
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "#B877D9",
+                          "mode": "fixed"
+                        }
+                      },
+                      {
+                        "id": "custom.fillOpacity",
+                        "value": 20
+                      },
+                      {
+                        "id": "custom.lineWidth",
+                        "value": 1
                       }
                     ]
                   }
@@ -2861,12 +2903,12 @@
         "1d"
       ],
       "fiscalYearStartMonth": 0,
-      "from": "now-24h",
+      "from": "now-1h",
       "hideTimepicker": false,
       "timezone": "browser",
       "to": "now"
     },
-    "title": "Node Exporter Mini11",
+    "title": "Node Exporter Mini13",
     "variables": [
       {
         "kind": "DatasourceVariable",
@@ -3007,7 +3049,7 @@
             "group": "prometheus",
             "kind": "DataQuery",
             "spec": {
-              "__legacyStringValue": "label_values(node_disk_read_bytes_total{instance=\"$node\", job=\"$job\"}, device)"
+              "__legacyStringValue": "label_values(node_disk_read_bytes_total{instance=\"$node\", job=\"$job\", device=~\"nvme[0-9]+n[0-9]+(p[0-9]+)?|sd[a-z]+[0-9]*\"}, device)"
             },
             "version": "v0"
           },
