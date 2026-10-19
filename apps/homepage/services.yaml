@@ -38,16 +38,10 @@
           nasType: scale
           key: {{HOMEPAGE_VAR_TRUENAS_API_KEY}}
 
-    - OpenWRT:
-        icon: openwrt.png
-        href: https://openwrt.homelab.ru
-        description: Маршрутизатор
-        widget:
-          type: openwrt
-          url: https://192.168.31.1
-          username: {{HOMEPAGE_VAR_OWRT_USERNAME}}
-          password: {{HOMEPAGE_VAR_OWRT_PASSWORD}}
-#          interfaceName: br-lan # optional
+    - OPNsense:
+        icon: opnsense.png
+        href: https://opnsense.homelab.ru
+        description: Файервол и маршрутизатор
 
 - Сервисы:
    
