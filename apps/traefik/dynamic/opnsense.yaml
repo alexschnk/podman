@@ -1,0 +1,17 @@
+http:
+  routers:
+    opnsense:
+      entryPoints:
+        - "https"
+      rule: "Host(`opnsense.homelab.ru`)"        # Change DOMAIN_NAME to yours
+      middlewares:
+        - security-headers@file
+      tls: {}
+      service: opnsense
+
+  services:
+    opnsense:
+      loadBalancer:
+        servers:
+          - url: "https://192.168.31.1"            # Change IP Address to your proxmox instance
+        passHostHeader: true
