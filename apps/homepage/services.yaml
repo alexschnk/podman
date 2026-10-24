@@ -95,7 +95,7 @@
         href: https://127.0.0.1:8384
         description: Синхронизация файлов. Клиент ПК
 
-    - Sftpgo:
+    - SFTPGo:
         icon: sftpgo.png
         href: https://sftpgo.homelab.ru
         description: Файловый сервер
