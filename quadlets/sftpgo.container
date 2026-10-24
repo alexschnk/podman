@@ -17,7 +17,9 @@ PublishPort=127.0.0.1:8093:10080
 PublishPort=2022:2022
 
 Volume=/home/alex/data/sftpgo:/var/lib/sftpgo:Z
-Volume=/home/alex/shares/syncthing:/srv/sftpgo/syncthing:ro,z
+Volume=/home/alex/shares/syncthing/bases:/srv/sftpgo/bases:ro,z
+Volume=/home/alex/shares/syncthing/data:/srv/sftpgo/data:ro,z
+Volume=/home/alex/shares/syncthing/karina:/srv/sftpgo/karina:ro,z
 Volume=/home/alex/shares/qbittorrent:/srv/sftpgo/qbittorrent:z
 Volume=/home/alex/shares/metube:/srv/sftpgo/metube:z
 
