@@ -1,0 +1,5 @@
+[Service]
+User=root
+Group=root
+ExecStart=
+ExecStart=/usr/bin/prometheus-node-exporter --web.config.file=/etc/node_exporter/web-config.yml
