@@ -47,8 +47,10 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "expr": "100 * (1 - avg(rate(node_cpu_seconds_total{mode=\"idle\", instance=\"$node\", job=\"$job\"}[$__rate_interval])))",
-                        "legendFormat": "CPU Busy"
+                        "editorMode": "code",
+                        "expr": "100 * (1 -\n  sum(rate(node_cpu_seconds_total{mode=\"idle\", instance=\"$node\", job=\"$job\"}[$__rate_interval]))\n  /\n  sum(rate(node_cpu_seconds_total{instance=\"$node\", job=\"$job\"}[$__rate_interval]))\n)",
+                        "legendFormat": "CPU Busy",
+                        "range": true
                       },
                       "version": "v0"
                     },
@@ -267,7 +269,8 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "expr": "100 * (1 - avg(rate(node_cpu_seconds_total{mode=\"idle\", instance=\"$node\", job=\"$job\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "100 * (1 -\n  sum(rate(node_cpu_seconds_total{mode=\"idle\", instance=\"$node\", job=\"$job\"}[$__rate_interval]))\n  /\n  sum(rate(node_cpu_seconds_total{instance=\"$node\", job=\"$job\"}[$__rate_interval]))\n)",
                         "instant": true
                       },
                       "version": "v0"
@@ -2561,7 +2564,7 @@
         "1d"
       ],
       "fiscalYearStartMonth": 0,
-      "from": "now-6h",
+      "from": "now-5m",
       "hideTimepicker": false,
       "timezone": "browser",
       "to": "now"
@@ -2593,8 +2596,8 @@
         "spec": {
           "allowCustomValue": true,
           "current": {
-            "text": "pve",
-            "value": "pve"
+            "text": "podman",
+            "value": "podman"
           },
           "hide": "dontHide",
           "includeAll": false,
@@ -2625,8 +2628,8 @@
         "spec": {
           "allowCustomValue": true,
           "current": {
-            "text": "pve",
-            "value": "pve"
+            "text": "podman",
+            "value": "podman"
           },
           "hide": "dontHide",
           "includeAll": false,
@@ -2657,8 +2660,8 @@
         "spec": {
           "allowCustomValue": true,
           "current": {
-            "text": "192.168.31.10:9100",
-            "value": "192.168.31.10:9100"
+            "text": "host.containers.internal:9100",
+            "value": "host.containers.internal:9100"
           },
           "hide": "dontHide",
           "includeAll": false,
@@ -2690,9 +2693,7 @@
           "allowCustomValue": true,
           "current": {
             "text": "All",
-            "value": [
-              "$__all"
-            ]
+            "value": "$__all"
           },
           "hide": "dontHide",
           "includeAll": true,
