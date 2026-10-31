@@ -26,3 +26,13 @@ scrape_configs:
     static_configs:
       - targets:
           - 'host.containers.internal:9100'
+  
+  - job_name: 'wolf'
+    scheme: https
+    basic_auth:
+      username: prometheus
+      password_file: /password
+    static_configs:
+      - targets:
+          - '153.80.241.212:9100'
+
