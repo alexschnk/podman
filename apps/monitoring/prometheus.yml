@@ -21,3 +21,8 @@ scrape_configs:
     static_configs:
       - targets:
           - '192.168.31.203:9100'
+  
+  - job_name: 'podman'
+    static_configs:
+      - targets:
+          - 'host.containers.internal:9100'
