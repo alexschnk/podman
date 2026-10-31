@@ -47,10 +47,8 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "editorMode": "code",
-                        "expr": "100 * (1 -\n  sum(rate(node_cpu_seconds_total{mode=\"idle\", instance=\"$node\", job=\"$job\"}[$__rate_interval]))\n  /\n  sum(rate(node_cpu_seconds_total{instance=\"$node\", job=\"$job\"}[$__rate_interval]))\n)",
-                        "legendFormat": "CPU Busy",
-                        "range": true
+                        "expr": "100 * (1 - avg(rate(node_cpu_seconds_total{mode=\"idle\", instance=\"$node\", job=\"$job\"}[$__rate_interval])))",
+                        "legendFormat": "CPU Busy"
                       },
                       "version": "v0"
                     },
@@ -269,8 +267,7 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "editorMode": "code",
-                        "expr": "100 * (1 -\n  sum(rate(node_cpu_seconds_total{mode=\"idle\", instance=\"$node\", job=\"$job\"}[$__rate_interval]))\n  /\n  sum(rate(node_cpu_seconds_total{instance=\"$node\", job=\"$job\"}[$__rate_interval]))\n)",
+                        "expr": "100 * (1 - avg(rate(node_cpu_seconds_total{mode=\"idle\", instance=\"$node\", job=\"$job\"}[$__rate_interval])))",
                         "instant": true
                       },
                       "version": "v0"
@@ -1754,7 +1751,7 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "expr": "rate(node_network_receive_bytes_total{instance=\"$node\", job=\"$job\", device=~\"en.*\"}[$__rate_interval])",
+                        "expr": "rate(node_network_receive_bytes_total{instance=\"$node\", job=\"$job\", device=~\"en.*|eth.*\"}[$__rate_interval])",
                         "legendFormat": "{{device}} - Download"
                       },
                       "version": "v0"
@@ -1773,7 +1770,7 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "expr": "rate(node_network_transmit_bytes_total{instance=\"$node\", job=\"$job\", device=~\"en.*\"}[$__rate_interval])",
+                        "expr": "rate(node_network_transmit_bytes_total{instance=\"$node\", job=\"$job\", device=~\"en.*|eth.*\"}[$__rate_interval])",
                         "legendFormat": "{{device}} - Upload"
                       },
                       "version": "v0"
@@ -2596,8 +2593,8 @@
         "spec": {
           "allowCustomValue": true,
           "current": {
-            "text": "podman",
-            "value": "podman"
+            "text": "wolf",
+            "value": "wolf"
           },
           "hide": "dontHide",
           "includeAll": false,
@@ -2628,8 +2625,8 @@
         "spec": {
           "allowCustomValue": true,
           "current": {
-            "text": "podman",
-            "value": "podman"
+            "text": "wolf",
+            "value": "wolf"
           },
           "hide": "dontHide",
           "includeAll": false,
@@ -2660,8 +2657,8 @@
         "spec": {
           "allowCustomValue": true,
           "current": {
-            "text": "host.containers.internal:9100",
-            "value": "host.containers.internal:9100"
+            "text": "153.80.241.212:9100",
+            "value": "153.80.241.212:9100"
           },
           "hide": "dontHide",
           "includeAll": false,
@@ -2708,7 +2705,7 @@
             "group": "prometheus",
             "kind": "DataQuery",
             "spec": {
-              "__legacyStringValue": "label_values(node_disk_read_bytes_total{instance=\"$node\", job=\"$job\", device=~\"nvme[0-9]+n[0-9]+(p[0-9]+)?|sd[a-z]+[0-9]*\"}, device)"
+              "__legacyStringValue": "label_values(node_disk_read_bytes_total{instance=\"$node\", job=\"$job\", device=~\"nvme[0-9]+n[0-9]+(p[0-9]+)?|sd[a-z]+[0-9]*|vd[a-z]+[0-9]*|xvd[a-z]+[0-9]*\"}, device)"
             },
             "version": "v0"
           },
