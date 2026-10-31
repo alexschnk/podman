@@ -128,8 +128,12 @@
               },
               "options": {
                 "legend": {
-                  "calcs": [],
-                  "displayMode": "list",
+                  "calcs": [
+                    "min",
+                    "mean",
+                    "max"
+                  ],
+                  "displayMode": "table",
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -140,7 +144,7 @@
                 }
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       },
@@ -237,10 +241,11 @@
               },
               "options": {
                 "cellHeight": "sm",
-                "showHeader": true
+                "showHeader": true,
+                "zebraStriping": false
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       },
@@ -338,7 +343,7 @@
                 "textMode": "auto"
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       },
@@ -436,7 +441,7 @@
                 "textMode": "auto"
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       },
@@ -534,7 +539,7 @@
                 "textMode": "auto"
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       },
@@ -632,7 +637,7 @@
                 "textMode": "auto"
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       },
@@ -717,7 +722,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       },
@@ -797,7 +802,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       },
@@ -878,7 +883,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       },
@@ -980,8 +985,12 @@
               },
               "options": {
                 "legend": {
-                  "calcs": [],
-                  "displayMode": "list",
+                  "calcs": [
+                    "min",
+                    "mean",
+                    "max"
+                  ],
+                  "displayMode": "table",
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -992,7 +1001,7 @@
                 }
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       },
@@ -1255,10 +1264,11 @@
               },
               "options": {
                 "cellHeight": "md",
-                "showHeader": true
+                "showHeader": true,
+                "zebraStriping": false
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       },
@@ -1391,8 +1401,12 @@
               },
               "options": {
                 "legend": {
-                  "calcs": [],
-                  "displayMode": "list",
+                  "calcs": [
+                    "min",
+                    "mean",
+                    "max"
+                  ],
+                  "displayMode": "table",
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -1403,7 +1417,7 @@
                 }
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       },
@@ -1502,9 +1516,11 @@
               "options": {
                 "legend": {
                   "calcs": [
-                    "lastNotNull"
+                    "min",
+                    "mean",
+                    "max"
                   ],
-                  "displayMode": "list",
+                  "displayMode": "table",
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -1515,7 +1531,7 @@
                 }
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       },
@@ -1633,8 +1649,12 @@
               },
               "options": {
                 "legend": {
-                  "calcs": [],
-                  "displayMode": "list",
+                  "calcs": [
+                    "min",
+                    "mean",
+                    "max"
+                  ],
+                  "displayMode": "table",
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -1645,7 +1665,7 @@
                 }
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       },
@@ -1774,8 +1794,12 @@
               },
               "options": {
                 "legend": {
-                  "calcs": [],
-                  "displayMode": "list",
+                  "calcs": [
+                    "min",
+                    "mean",
+                    "max"
+                  ],
+                  "displayMode": "table",
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -1786,7 +1810,7 @@
                 }
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       },
@@ -1892,8 +1916,12 @@
               },
               "options": {
                 "legend": {
-                  "calcs": [],
-                  "displayMode": "list",
+                  "calcs": [
+                    "min",
+                    "mean",
+                    "max"
+                  ],
+                  "displayMode": "table",
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -1904,7 +1932,7 @@
                 }
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       },
@@ -2006,8 +2034,12 @@
               },
               "options": {
                 "legend": {
-                  "calcs": [],
-                  "displayMode": "list",
+                  "calcs": [
+                    "min",
+                    "mean",
+                    "max"
+                  ],
+                  "displayMode": "table",
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -2018,7 +2050,7 @@
                 }
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       },
@@ -2040,8 +2072,8 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "expr": "sum(rate(node_network_receive_bytes_total{instance=\"$node\", job=\"$job\", device!~\"lo|veth.*|docker.*|br-.*\"}[$__rate_interval]))",
-                        "legendFormat": "Download"
+                        "expr": "rate(node_network_receive_bytes_total{instance=\"$node\", job=\"$job\", device=~\"en.*\"}[$__rate_interval])",
+                        "legendFormat": "{{device}} - Download"
                       },
                       "version": "v0"
                     },
@@ -2059,8 +2091,8 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "expr": "sum(rate(node_network_transmit_bytes_total{instance=\"$node\", job=\"$job\", device!~\"lo|veth.*|docker.*|br-.*\"}[$__rate_interval]))",
-                        "legendFormat": "Upload"
+                        "expr": "rate(node_network_transmit_bytes_total{instance=\"$node\", job=\"$job\", device=~\"en.*\"}[$__rate_interval])",
+                        "legendFormat": "{{device}} - Upload"
                       },
                       "version": "v0"
                     },
@@ -2072,7 +2104,7 @@
               "transformations": []
             }
           },
-          "description": "",
+          "description": "Трафик по каждому сетевому интерфейсу: Download выше нуля, Upload ниже нуля.",
           "id": 5,
           "links": [],
           "title": "Network (Download / Upload)",
@@ -2137,35 +2169,13 @@
                 "overrides": [
                   {
                     "matcher": {
-                      "id": "byName",
-                      "options": "Upload"
+                      "id": "byRegexp",
+                      "options": "/.*Upload.*/"
                     },
                     "properties": [
                       {
                         "id": "custom.transform",
                         "value": "negative-Y"
-                      },
-                      {
-                        "id": "color",
-                        "value": {
-                          "fixedColor": "orange",
-                          "mode": "fixed"
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "matcher": {
-                      "id": "byName",
-                      "options": "Download"
-                    },
-                    "properties": [
-                      {
-                        "id": "color",
-                        "value": {
-                          "fixedColor": "green",
-                          "mode": "fixed"
-                        }
                       }
                     ]
                   }
@@ -2173,8 +2183,12 @@
               },
               "options": {
                 "legend": {
-                  "calcs": [],
-                  "displayMode": "list",
+                  "calcs": [
+                    "min",
+                    "mean",
+                    "max"
+                  ],
+                  "displayMode": "table",
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -2185,7 +2199,7 @@
                 }
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       },
@@ -2541,8 +2555,12 @@
               },
               "options": {
                 "legend": {
-                  "calcs": [],
-                  "displayMode": "list",
+                  "calcs": [
+                    "min",
+                    "mean",
+                    "max"
+                  ],
+                  "displayMode": "table",
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -2553,7 +2571,7 @@
                 }
               }
             },
-            "version": "13.2.3"
+            "version": "13.3.0"
           }
         }
       }
@@ -2903,12 +2921,12 @@
         "1d"
       ],
       "fiscalYearStartMonth": 0,
-      "from": "now-1h",
+      "from": "now-6h",
       "hideTimepicker": false,
       "timezone": "browser",
       "to": "now"
     },
-    "title": "Node Exporter Mini13",
+    "title": "Node Exporter Mini",
     "variables": [
       {
         "kind": "DatasourceVariable",
