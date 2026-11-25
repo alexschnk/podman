@@ -27,7 +27,7 @@ scrape_configs:
       - targets:
           - 'host.containers.internal:9100'
   
-  - job_name: 'wolf'
+  - job_name: 'silver'
     scheme: https
     basic_auth:
       username: prometheus
